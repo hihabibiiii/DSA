@@ -1,20 +1,19 @@
-# Find Sum Of Two Number With Two Pointer
+#Find Unique Number 
 
-class soluation:
-    def TwoNumSum(self, number, target):
-        i,j = 0, len(number) - 1
+class Solution:
+    def uniNum(self, numbers):
+        if not numbers:
+            return 0, []
+        officer = 0
+        cm = 1
+        while cm < len(numbers):
+            if numbers[cm] != numbers[officer]:
+                officer += 1
+                numbers[officer] = numbers[cm]
+            cm += 1
+        return officer + 1, numbers[:officer + 1]
 
-        while i < j:
-            s = number[i] + number[j]
-            if s == target:
-                return (i +1, j + 1)
-            elif s < target:
-                i += 1
-            else:
-                j -= 1
+obj = Solution()
+nums = [1,1,2,2,3,3,4,4,5,5,6,6,6,6,6,7,7,7,7,7,7,8,8,8,8,9,9,9,9,9,9]
 
-obj = soluation()
-nums = [2,3,4,5,6,7,8,9]
-target = 13
-result = obj.TwoNumSum(nums, target)
-print(result)
+print(obj.uniNum(nums))

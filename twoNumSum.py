@@ -1,3 +1,6 @@
+# Find Sum Of Two Number With Two Pointer
+
+
 class soluation:
     def TwoNumSum(self, number, target):
         i,j = 0, len(number) - 1
