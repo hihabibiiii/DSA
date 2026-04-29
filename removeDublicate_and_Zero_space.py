@@ -1,4 +1,5 @@
-#Find Unique Number 
+#Find Unique Number With Two Way Pointer
+
 
 class Solution:
     def uniNum(self, numbers):

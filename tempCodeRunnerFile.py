@@ -9,7 +9,7 @@ class Solution:
         index = n -1 
 
         while left <= right:
-            if abs(nums[left]) > abs(nums[right]):
+            if abs(nums[left]) < abs(nums[right]):
                 res[index] = nums[left] ** 2
                 left += 1
             else:
