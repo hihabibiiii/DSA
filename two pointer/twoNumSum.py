@@ -8,7 +8,7 @@ class soluation:
         while i < j:
             s = number[i] + number[j]
             if s == target:
-                return (i +1, j + 1)
+                return (f" Array Number is {number[i]} and Index Is {i} And Second Array Number is {number[j]} and Index Is {j}")
             elif s < target:
                 i += 1
             else:
@@ -16,6 +16,6 @@ class soluation:
 
 obj = soluation()
 nums = [2,3,4,5,6,7,8,9]
-target = 13
+target = 5
 result = obj.TwoNumSum(nums, target)
 print(result)

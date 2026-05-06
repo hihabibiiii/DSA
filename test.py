@@ -1,23 +1,14 @@
-from typing import List
+nums = [1,2,3,4,5,6,7]
+target = 12
 
-class Solution:
-    def sortedArray(self, nums:List[int]) -> List[int]:
-        n = len(nums)
-        res = [0] * n
+l , r = 0, len(nums) - 1
 
-        left, right = 0 , n-1
-        index = n -1 
-
-        while left <= right:
-            if abs(nums[left]) > abs(nums[right]):
-                res[index] = nums[left] ** 2
-                left += 1
-            else:
-                res[index] = nums[right] ** 2
-                right -= 1
-
-            index -= 1
-        return res
-
-nums = [-4, -1, 0, 3, 10]
-print(Solution().sortedArray(nums))
+while l < r:
+    s = nums[l] + nums[r]
+    if s == target:
+        print(l,r)
+        break
+    elif s < target:
+        l += 1
+    else:
+        r -= 1
