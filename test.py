@@ -1,17 +1,17 @@
 class Solution:
-    def maxSunArray(self, nums, k):
+    def TwoSum(self, nums, target):
         n = len(nums)
-        if n < k:
-            return 0
+        left, right = 0, n - 1
         
-        window_sum = sum(nums[:k])
-        max_sum = window_sum
-        
-        for i in range(k,n):
-            window_sum += nums[i] - nums[i - k]
-            max_sum = max(window_sum, max_sum)
-        
-        return max_sum
+        while left < right:
+            s = nums[left] + nums[right]
+            if s == target:
+                return (f" Array Number is {nums[left]} and Index Is {left} And Second Array Number is {nums[right]} and Index Is {right}")
+            elif s < target:
+                left += 1
+            else:
+                right -= 1
+        return left
     
-nums = [1,2,3,4,5,6,2,1,3,4]
-print(Solution().maxSunArray(nums, 2))
+nums = [2, 7, 11, 15]
+print(Solution().TwoSum(nums, 9))
